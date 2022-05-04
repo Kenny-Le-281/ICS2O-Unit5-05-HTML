@@ -23,11 +23,11 @@ function check() {
   var thirdLength = document.getElementById("third-dimension").value
 
   // process and output
-  if (firstLength == secondLength == thirdLength) {
+  if ((firstLength == secondLength) && (secondLength == thirdLength)) {
     document.getElementById("answer").innerHTML = 'It is an equilateral triangle!'
   } else if ((firstLength == secondLength) || (firstLength == thirdLength) || (secondLength == thirdLength)) {
     document.getElementById("answer").innerHTML = 'It is an isosceles triangle!'
   } else {
     document.getElementById("answer").innerHTML = 'It is a scalene triangle!'
   }
-}
+
