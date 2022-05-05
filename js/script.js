@@ -23,11 +23,15 @@ function check() {
   var thirdLength = document.getElementById("third-dimension").value
 
   // process and output
-  if ((firstLength == secondLength) && (secondLength == thirdLength)) {
-    document.getElementById("answer").innerHTML = 'It is an equilateral triangle!'
-  } else if ((firstLength == secondLength) || (firstLength == thirdLength) || (secondLength == thirdLength)) {
-    document.getElementById("answer").innerHTML = 'It is an isosceles triangle!'
+  if ((firstLength <= 0) || (secondLength <= 0) || (thirdLength <= 0)) {
+    document.getElementById("answer").innerHTML = 'Please input a positive number.'
   } else {
-    document.getElementById("answer").innerHTML = 'It is a scalene triangle!'
+    if ((firstLength == secondLength) && (secondLength == thirdLength)) {
+      document.getElementById("answer").innerHTML = 'It is an equilateral triangle!'
+    } else if ((firstLength == secondLength) || (firstLength == thirdLength) || (secondLength == thirdLength)) {
+      document.getElementById("answer").innerHTML = 'It is an isosceles triangle!'
+    } else {
+      document.getElementById("answer").innerHTML = 'It is a scalene triangle!'
+    }    
   }
-
+}
